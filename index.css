@@ -1,0 +1,82 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(rgb(0, 0, 0), rgb(48, 48, 48));
+}
+.left img{
+    height: 50px;
+}
+.right {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+    font-size: 20px;
+
+}
+.promo,.pelis,.billetes{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.header{
+    background-color: rgb(196, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left, .right{
+    margin: 20px 40px;
+}
+main{
+    height: 300vh;
+}
+.home{
+    background-image:url(imagenes/MenuSuperDuo.png) ;
+    background-repeat: no-repeat;
+    background-size:60vh;
+    background-position: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.derecha{
+    color: white; 
+    font-size: 50px;
+    margin-left: 60%;
+}
+.derecha h3{
+    margin-bottom: 25px;
+}
+.derecha h5{
+    margin-top: 10px;
+}
+.boton{
+    background-color: red;
+    font-size: 20px;
+    border-radius: 100px;
+    margin: 0px 100px 0px 190px;
+    padding: 1px 20px;
+}
+.boton:hover{
+    background-color: rgb(151, 0, 0);
+}
+
+marquee{
+    margin: 250px 0px;
+    color: white;
+}
+
+.peliculas{
+    background-image: url(imagenes/the-meg-2-the-trench-1665056805.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: white;
+    border-radius: 40px;
+    background-color: rgb(73, 73, 73);
+    margin-top:50px;
+}
+ .texto{
+    margin-left: 300px;
+    padding: 20px;
+}
