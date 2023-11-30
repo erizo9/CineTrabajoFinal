@@ -1,39 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Cine Favorito</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <nav class="header">
-            <div class="left">
-                <img src="multimedia/logosinletra.svg" class="logocine">
-            </div>
-            <ul class="right">
-                <li class="promo">Promos</li>
-                <li class="pelis">Películas</li>
-                <li class="billetes">Boletos</li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="principal">
-        <div class="home">
-            <div class="izquierda">
-                <img src="multimedia/fotopalomitas.png">
-            </div>
-            <div class="derecha">
-                <img src="multimedia/presentacion.png">
-                <br>
-                <button class="botonhome">COMPRAR</button>
-            </div>
-            </div>
-        </main>
-
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tu Cine Favorito</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <nav class="header">
+                <div class="left">
+                    <img src="multimedia/logosinletra.svg" class="logocine">
+                </div>
+                <ul class="right">
+                    <li class="promo">Promos</li>
+                    <li class="pelis">Películas</li>
+                    <li class="billetes">Boletos</li>
+                </ul>
+            </nav>
+        </header>
+    
         <main class="principal">
             <div class="home">
                 <div class="izquierda">
@@ -47,7 +41,35 @@
                 </div>
             </main>
     
- 
+    
+            <main class="cartelera">
+
+                    <div id="movieInfo">
+                        <!-- Aquí se mostrará información sobre las películas -->
+                    </div>
+                    
+                    <div id="ticketForm">
+                        <!-- Formulario para comprar boletos -->
+                        <label for="movie">Selecciona una película:</label>
+                        <div class="peliculas" id="movieContainer">
+                            <!-- Aquí se cargarán las imágenes de las películas -->
+                        </div>
+                
+                        <label for="quantity">Cantidad de boletos:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                
+                        <button onclick="buyTickets()">COMPRAR</button>
+                    </div>
+            <!--     
+                    <div id="transactionHistory">
+                        Aquí se mostrará el historial de transacciones 
+                    </div> -->
+                    </div>
+
+                </main>
+
     <script src="index.js"></script>
 </body>
 </html>
+
+

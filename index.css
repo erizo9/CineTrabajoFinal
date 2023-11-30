@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Helvetica'; 
+    src: url('fuenteHelvetica/HelveticaNowText-Regular.woff') format('woff'); /* Formato WOFF para compatibilidad */
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HelveticaBold'; 
+    src: url('fuenteHelvetica/HelveticaNowText-Bold.woff') format('woff'); /* Formato WOFF para compatibilidad */
+    font-weight: normal;
+    font-style: normal;
+  }
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(rgb(0, 0, 0), rgb(48, 48, 48));
+    font-family: 'Helvetica';
+    
+}
+
+/* Header */
+
+.header{
+    background-color: rgb(196, 0, 0);
+    height:90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logocine{
+    height: 60px;
+}
+.right {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+    font-size: 20px;
+
+}
+.promo,.pelis,.billetes{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.left, .right{
+    margin: 20px 40px;
+}
+
+
+/* Header */
+
+.principal{  
+    height:100vh;
+    height: calc(100vh - 90px);
+    overflow-y: hidden;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent), 
+              url('multimedia/cinefondodegradado.png') center/cover no-repeat;
+    background-position: right center; /* Mueve el fondo hacia la derecha */
+
+}
+/* Home */
+.home{
+    background-repeat: no-repeat;
+    background-size:60vh;
+    background-position: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.izquierda{
+    margin-left:12%;
+}
+.derecha{
+    margin-right:16%;margin-top:5.4%;
+}
+.izquierda img{
+    height: 600px;
+}
+.derecha img{
+    height: 320px;
+}
+.botonhome {
+    margin-left: 2%;margin-top:3%;
+    font-family: 'HelveticaBold';
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px; /* Ajusta el valor según desees un redondeo más o menos pronunciado */
+    background-color: red; /* Color de fondo rojo */
+    color: black; /* Color de texto negro */
+    text-decoration: none; /* Elimina subrayado si es un enlace */
+    border: none; /* Elimina el borde para que se vea más redondeado */
+    cursor: pointer;
+  }
+/* Home */
+
+
+.cartelera{
+    background-image: none;
+}
+.peliculas,img{
+    height:700px;
+}
