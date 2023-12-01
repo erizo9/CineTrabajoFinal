@@ -96,7 +96,23 @@ body{
   }
 /* Home */
 
+.cartelera {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 80px; /* Ajusta el margen según tus preferencias */
+}
 
+.peliculas img {
+    width: 300px; /* Ajusta el tamaño de las imágenes según tus preferencias */
+    margin: 10px; /* Ajusta el margen entre las imágenes según tus preferencias */
+}
+
+#ticketForm {
+    width: 100%; /* Ajusta el ancho del formulario según tus preferencias */
+    text-align: center;
+}
+/*
 .cartelera{
     background-image: none;
 }

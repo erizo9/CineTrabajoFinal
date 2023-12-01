@@ -19,14 +19,25 @@ document.addEventListener('DOMContentLoaded', async function () {
     try {
         const response = await fetch('http://localhost:3001/api/movies');
         const data = await response.json();
+        const movieContainer = document.getElementById('movieContainer');
+
         // Agregar imágenes al contenedor
-        data.forEach(movie => {
+        data.forEach((movie, index) => {
             const img = document.createElement('img');
             img.src = `/imagenes/${movie.image}`;
             img.alt = movie.title;
             img.setAttribute('data-movie-id', movie.id);
             img.addEventListener('click', () => redirectToVerificarButacas(movie.id));
+
+            // Agregar una clase a cada imagen para aplicar estilos específicos
+            img.classList.add('movie-image');
+
             movieContainer.appendChild(img);
+
+            // Agregar un salto de línea después de cada cuarta imagen
+            if ((index + 1) % 4 === 0) {
+                movieContainer.appendChild(document.createElement('br'));
+            }
         });
     } catch (error) {
         console.error(error);
@@ -36,6 +47,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         // Puedes realizar algún trabajo adicional aquí si es necesario
         window.location.href = `/verificarButacas.html?movieId=${movieId}`;
     }
+}
 
     // Función para comprar boletos
     // window.buyTickets = async () => {
@@ -86,4 +98,4 @@ document.addEventListener('DOMContentLoaded', async function () {
 //     } catch (error) {
 //         console.error(error);
 //     }
- });
+ );
