@@ -23,39 +23,40 @@ document.addEventListener('DOMContentLoaded', async function () {
         const data = await response.json();
         const movieContainer = document.getElementById('movieContainer');
         let moviesAdded = 0; // Variable para rastrear la cantidad de películas agregadas
-
+    
         data.forEach((movie, index) => {
             // Crear y agregar el subtítulo después de la primera fila de películas
-            if (index === 4) {
+            if (index === 5) {
                 const subtitulo = document.createElement('p');
                 subtitulo.classList.add('subtitulo1cartelera');
                 subtitulo.textContent = 'NUEVAS PELÍCULAS';
                 movieContainer.appendChild(subtitulo);
-
+    
                 // Crear y agregar la línea roja después del subtítulo
                 const linearoja = document.createElement('div');
                 linearoja.classList.add('linearoja');
                 movieContainer.appendChild(linearoja);
             }
-
+    
             // Agregar la imagen
             const img = document.createElement('img');
             img.src = `/imagenes/${movie.image}`;
             img.alt = movie.title;
             img.setAttribute('data-movie-id', movie.id);
             img.addEventListener('click', () => redirectToVerificarButacas(movie.id));
-
+    
             // Agregar una clase a cada imagen para aplicar estilos específicos
-            img.classList.add('movie-image');
+            img.classList.add('movie-image', 'rounded-image'); // Agregar clase 'rounded-image'
             movieContainer.appendChild(img);
-
+    
             // Incrementar la variable después de agregar la película
             moviesAdded++;
         });
-
+    
     } catch (error) {
         console.error(error);
     }
+    
 
     
 

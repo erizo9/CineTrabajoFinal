@@ -1,53 +1,51 @@
+/*HEADER*/
+.header{
+    background-color: rgb(196, 0, 0);
+    height:90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logocine{
+    height: 60px;
+}
+.right {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+    font-size: 20px;
+
+}
+.promo,.pelis,.billetes{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.left, .right{
+    margin: 20px 40px;
+}
+/*HEADER*/
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000;
     color: #fff;
+    height:100vh;
+    height: calc(100vh - 90px);
+    overflow-y: hidden;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent), 
+              url('multimedia/cinefondodegradado.png') center/cover no-repeat;
+    background-position: right center; /* Mueve el fondo hacia la derecha */
+
 }
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
+
+.all {
+    margin-top: 40px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.all{
-    margin-top: 30px;
-    display: flex;
-}
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav li {
-    margin-right: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #ffd700; /* Cambia de color al pasar el ratón sobre el enlace */
-}
-
-#movieDetails {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-    width: 60%; /* Ajuste para ocupar el 60% de la pantalla */
 }
 
 #moviePoster {
@@ -57,22 +55,36 @@ nav a:hover {
     margin-top: 20px;
 }
 
-
 #contenedorButacas {
+    margin-left: 10%;
+    margin-top: 5%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap; /* Modificado para ajustar el salto de línea */
+    justify-content: space-between; /* Cambiado para distribuir los bloques */
     align-items: center;
-    padding: 70px;
-    width: 40%; /* Ajuste para ocupar el 40% de la pantalla */
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 20px;
+    padding: 20px; /* Reducido el espacio entre bloques */
+    height: 600px;
+    width: 40%;
 } 
 
+.bloque {
+    display: flex;
+    flex-direction: column; /* Bloques ahora son columnas en lugar de filas */
+}
+
+.spacer {
+    width: 20px; /* Espacio vertical entre bloques */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+}
+
 .butaca.selected {
-    background-color: #008CBA; /* Azul cuando está seleccionada */
+    background-color: #008CBA;
 }
 
 .butaca.ocupada {
-    background-color: #FF0000; /* Rojo cuando está ocupada */
+    background-color: #FF0000;
 }
 
 .butaca.comprada {
@@ -80,33 +92,38 @@ nav a:hover {
 }
 
 #movieContainer {
-    padding: 20px;
+    padding: 10px;
 }
 
-/* Estilo para la sección de historial de transacciones */
 #transactionHistory {
     padding: 20px;
 }
 
 .butaca {
-    width: 13%; /* Cada butaca ocupa el 18% del ancho del contenedor */
-    height: 30px;
+    width: 50px;
+    height: 50px;
     margin: 5px 10px;
-    background-color: #ccc;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-size: 14px;
-    border: 2px solid #fff;
     transition: background-color 0.3s;
-    border-radius: 20px;
+
+}
+.pantalla{
+    background-color: rgb(0, 0, 0);
+    width:2000px;
+    height:40px;
 }
 
-.movieDetails, img{
-    max-width: 500px;
-    margin: 50px;
+.movieDetails, img {
+    max-width: 400px;
+    margin-top: 20%;
+    margin-left: 40%;
 }
+
 #comprarBtn {
     margin-top: 20px;
     margin-left: 420px;
@@ -116,7 +133,7 @@ nav a:hover {
     border: none;
     cursor: pointer;
     font-size: 16px;
-    display: block; /* Añadido para que el botón sea un bloque */
+    display: block;
     width: 15%;
     border-radius: 100px;
 }

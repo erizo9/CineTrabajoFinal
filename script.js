@@ -16,7 +16,9 @@ let movies = [
     { id: 5, image:'meg2.jpg', title: 'THE MEG 2', director: 'Ben Wheatley', actors: 'Lorem ipsum', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
     { id: 6, image:'elhoyo.png' ,title: 'THE  2', director: 'Ben Wheatley', actors: 'Lorem ipsum', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
     { id: 7, image: 'mario.png', title: 'THE MEG 2', director: 'Ben Wheatley', actors: 'Lorem ipsum', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
-    { id: 8, image:'granturismo.png',title: 'THE  2', director: 'Ben Wheatley', actors: 'Lorem ipsum', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' }
+    { id: 8, image:'granturismo.png',title: 'THE  2', director: 'Ben Wheatley', actors: 'Lorem ipsum', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+    { id: 9, image: 'mario.png', title: 'THE MEG 2', director: 'Ben Wheatley', actors: 'Lorem ipsum', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+    { id: 10, image:'granturismo.png',title: 'THE  2', director: 'Ben Wheatley', actors: 'Lorem ipsum', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' }
 
 ];
 const butacasOcupadas = [1,5,7,3]

@@ -16,6 +16,12 @@
     font-weight: normal;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'HelveticaCursiva'; 
+    src: url('fuenteHelvetica/HelveticaNowText-ExtLtIta.woff') format('woff'); /* Formato WOFF para compatibilidad */
+    font-weight: normal;
+    font-style: normal;
+  }
 body{
     padding: 0;
     margin: 0;
@@ -80,20 +86,43 @@ body{
     margin-left:12%;
 }
 .derecha{
-    margin-right:16%;margin-top:5.4%;
+
 }
+.textopresentacion{
+    margin-left: 20%;
+}
+.f1{
+    color: white;
+    font-family: 'HelveticaCursiva';
+    font-size: 100px;
+    margin-bottom: -28px;
+    margin-left:1%;
+}
+.f2{
+    color: white;
+    font-family: 'HelveticaBold';
+    font-size: 110px;
+    margin:0;
+}
+.f3{
+    color: white;
+    font-family: 'HelveticaThin';
+    font-size: 28px;
+    margin:0;
+    margin-left:1%;
+    width: 65%;
+}
+
 .izquierda img{
     height: 600px;
 }
-.derecha img{
-    height: 320px;
-}
+
 .botonhome {
-    margin-left: 2%;margin-top:3%;
+    margin-left:1%;margin-top:3%;
     font-family: 'HelveticaBold';
     display: inline-block;
-    padding: 10px 20px;
-    border-radius: 20px; /* Ajusta el valor según desees un redondeo más o menos pronunciado */
+    padding: 15px 30px;
+    border-radius: 30px; /* Ajusta el valor según desees un redondeo más o menos pronunciado */
     background-color: red; /* Color de fondo rojo */
     color: black; /* Color de texto negro */
     text-decoration: none; /* Elimina subrayado si es un enlace */
@@ -133,8 +162,12 @@ body{
 
 }
 .peliculas img {
-    width: 17%; /* Ajusta el tamaño de las imágenes según tus preferencias */
+    width: 13%; /* Ajusta el tamaño de las imágenes según tus preferencias */
     margin: 30px; /* Ajusta el margen entre las imágenes según tus preferencias */
+}
+/*redonder imagenes cargadas js  */
+.rounded-image {
+    border-radius: 10px; /* Ajusta el valor según el redondeo deseado */
 }
 
 #ticketForm {
