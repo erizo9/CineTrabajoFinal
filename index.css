@@ -10,6 +10,12 @@
     font-weight: normal;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'HelveticaThin'; 
+    src: url('fuenteHelvetica/HelveticaNowText-ExtraLight.woff') format('woff'); /* Formato WOFF para compatibilidad */
+    font-weight: normal;
+    font-style: normal;
+  }
 body{
     padding: 0;
     margin: 0;
@@ -103,9 +109,32 @@ body{
     margin: 80px; /* Ajusta el margen según tus preferencias */
 }
 
+.titulocartelera{
+    font-size: 350%;
+    margin-left:10%;
+    color:white;
+    text-align: left;
+}
+.subtitulo1cartelera{
+    font-family: 'HelveticaThin';
+    margin-left:10%;
+    color:white;
+    text-align: left;
+    font-size: 250%;
+    margin-bottom: 0%;
+
+}
+.linearoja{
+    margin-left: 10%;
+    width: 80%; /* Ancho del rectángulo */
+    height: 6px; /* Altura del rectángulo */
+    background-color: darkred; /* Borde rojo oscuro de 2 píxeles */
+
+
+}
 .peliculas img {
-    width: 300px; /* Ajusta el tamaño de las imágenes según tus preferencias */
-    margin: 10px; /* Ajusta el margen entre las imágenes según tus preferencias */
+    width: 17%; /* Ajusta el tamaño de las imágenes según tus preferencias */
+    margin: 30px; /* Ajusta el margen entre las imágenes según tus preferencias */
 }
 
 #ticketForm {

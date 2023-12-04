@@ -16,13 +16,29 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 
 
+
+   
     try {
         const response = await fetch('http://localhost:3001/api/movies');
         const data = await response.json();
         const movieContainer = document.getElementById('movieContainer');
+        let moviesAdded = 0; // Variable para rastrear la cantidad de películas agregadas
 
-        // Agregar imágenes al contenedor
         data.forEach((movie, index) => {
+            // Crear y agregar el subtítulo después de la primera fila de películas
+            if (index === 4) {
+                const subtitulo = document.createElement('p');
+                subtitulo.classList.add('subtitulo1cartelera');
+                subtitulo.textContent = 'NUEVAS PELÍCULAS';
+                movieContainer.appendChild(subtitulo);
+
+                // Crear y agregar la línea roja después del subtítulo
+                const linearoja = document.createElement('div');
+                linearoja.classList.add('linearoja');
+                movieContainer.appendChild(linearoja);
+            }
+
+            // Agregar la imagen
             const img = document.createElement('img');
             img.src = `/imagenes/${movie.image}`;
             img.alt = movie.title;
@@ -31,17 +47,18 @@ document.addEventListener('DOMContentLoaded', async function () {
 
             // Agregar una clase a cada imagen para aplicar estilos específicos
             img.classList.add('movie-image');
-
             movieContainer.appendChild(img);
 
-            // Agregar un salto de línea después de cada cuarta imagen
-            if ((index + 1) % 4 === 0) {
-                movieContainer.appendChild(document.createElement('br'));
-            }
+            // Incrementar la variable después de agregar la película
+            moviesAdded++;
         });
+
     } catch (error) {
         console.error(error);
     }
+
+    
+
 
     function redirectToVerificarButacas(movieId) {
         // Puedes realizar algún trabajo adicional aquí si es necesario
