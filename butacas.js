@@ -55,10 +55,30 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     }
 
+    let total = 0;
+
     function toggleButaca(butaca) {
+        const precio = 5; // Precio por butaca
+    
         if (!butaca.classList.contains('ocupada') && !butaca.classList.contains('comprada')) {
-            butaca.classList.toggle('selected');
+            if (!butaca.classList.contains('selected')) {
+                // La butaca no está seleccionada, así que la seleccionamos y sumamos el precio
+                butaca.classList.add('selected');
+                total += precio;
+            } else {
+                // La butaca ya está seleccionada, así que la deseleccionamos y restamos el precio
+                butaca.classList.remove('selected');
+                total -= precio;
+            }
         }
+    
+        actualizarTotal(); // Llama a la función para actualizar el total en la interfaz
+    }
+    
+    function actualizarTotal() {
+        // Actualiza el elemento en el que muestras el total
+        const totalElement = document.getElementById('total');
+        totalElement.textContent = `Total: ${total}€`;
     }
 
     function comprarButacas(movieId) {
@@ -74,6 +94,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         } else {
             // Obtiene las butacas compradas actuales desde localStorage
             const butacasCompradas = JSON.parse(localStorage.getItem('butacasCompradas')) || {};
+            
+            // No hay redeclaración aquí
+            const seleccionadasIds = butacasSeleccionadas.map(butaca => butaca.id).join(', ');
+
+            alert(`¡Compra exitosa! Butacas seleccionadas: ${seleccionadasIds}\nTotal: ${total}€`);
 
             // Asegura que butacasCompradas[movieId] sea un array antes de usar push
             if (!Array.isArray(butacasCompradas[movieId])) {
@@ -90,15 +115,13 @@ document.addEventListener('DOMContentLoaded', async function () {
             // Almacena la lista actualizada en localStorage
             localStorage.setItem('butacasCompradas', JSON.stringify(butacasCompradas));
 
-            const seleccionadasIds = butacasSeleccionadas.map(butaca => butaca.id).join(', ');
-            alert(`¡Compra exitosa! Butacas seleccionadas: ${seleccionadasIds}`);
-
             // Después de la compra, marca las butacas como compradas y deshabilita el evento click
             butacasSeleccionadas.forEach(butaca => {
                 butaca.classList.add('comprada');
                 butaca.classList.remove('selected');
                 butaca.removeEventListener('click', toggleButaca);
             });
+            redirectTopay();
         }
     }
 
@@ -114,16 +137,18 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
     }
 
-    const comprarBtn = document.getElementById('comprarBtn');
-    comprarBtn.addEventListener('click', () => comprarButacas(movieId));
+    const comprarBtnDesktop = document.getElementById('comprarBtnDesktop');
+    comprarBtnDesktop.addEventListener('click', () => comprarButacas(movieId));
 
-//     function reiniciarButacasCompradas() {
-//         localStorage.removeItem('butacasCompradas');
-//         // También puedes reiniciar la apariencia de las butacas en la interfaz gráfica si es necesario
-//         butacas.forEach(butaca => {
-//             butaca.classList.remove('comprada');
-//             butaca.addEventListener('click', toggleButaca);
-//         });
-//     }
-//     reiniciarButacasCompradas()
+    const comprarBtnMobile = document.getElementById('comprarBtnMobile');
+    comprarBtnMobile.addEventListener('click', () => comprarButacas(movieId));
+
+    // Función para redirigir a la página pay.html
+    function redirectTopay() {
+        if (movieId) {
+            window.location.href = `/pay.html?movieId=${movieId}`;
+        } else {
+            console.error('ID de película no proporcionado');
+        }
+    }
 });

@@ -1,4 +1,14 @@
 
+//scroll down
+document.addEventListener('DOMContentLoaded', function() {
+    const botonHome = document.querySelector('.botonhome');
+    const peliculasSection = document.querySelector('.peliculas');
+
+    botonHome.addEventListener('click', function() {
+      peliculasSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
 document.addEventListener('DOMContentLoaded', async function () {
     // const urlParams = new URLSearchParams(window.location.search);
     // const movieId = urlParams.get('movieId');
@@ -17,7 +27,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 
 
-   
+      
+
+
     try {
         const response = await fetch('http://localhost:3001/api/movies');
         const data = await response.json();
@@ -43,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             img.src = `/imagenes/${movie.image}`;
             img.alt = movie.title;
             img.setAttribute('data-movie-id', movie.id);
-            img.addEventListener('click', () => redirectToVerificarButacas(movie.id));
+            img.addEventListener('click', () => redirectToinfoPeli(movie.id));
     
             // Agregar una clase a cada imagen para aplicar estilos específicos
             img.classList.add('movie-image', 'rounded-image'); // Agregar clase 'rounded-image'
@@ -60,6 +72,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     
 
+    function redirectToinfoPeli(movieId){
+        window.location.href = `/infopeli.html?movieId=${movieId}`;
+    }
 
     function redirectToVerificarButacas(movieId) {
         // Puedes realizar algún trabajo adicional aquí si es necesario
